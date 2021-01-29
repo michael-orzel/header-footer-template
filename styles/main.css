@@ -1,0 +1,389 @@
+:root {
+  font-size: 1rem;
+  --black: #000;
+  --white: #FFF;
+  --white-darker: #EEE;
+  --white-darkest: #D6D6D6;
+  --gray: #404142;
+  --gray-darker: #363738;
+  --gray-lighter: #969696;
+  --gray-lightest: #D6D6D6;
+  --form-placeholder: #595959;
+  --bg: #f9f9f9;
+  --primary: #7400CC;
+  --primary-lighter: #E2BDFF;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+*:focus {
+  outline: 0.0625rem dashed var(--primary);
+}
+
+body {
+  font-family: sans-serif;
+  color: var(--black);
+  background: var(--bg);
+  line-height: 1.5;
+  line-length: 36rem;
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-top: 7rem;
+  margin: 0;
+}
+
+.container {
+  flex: 1;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Navigation */
+
+.nav {
+  background: var(--bg);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 3.5rem;
+  border-radius: 0.0625rem;
+  overflow: hidden;
+  box-shadow: 0 0.0625rem 0.0625rem 0.0625rem rgba(0,0,0,.1);
+  filter: alpha(opacity=90);
+  opacity: 0.9;
+  z-index: 10;
+}
+
+.nav ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav ul li {
+  list-style: none;
+}
+
+.nav ul li a {
+  display: block;
+  color: var(--gray);
+  border-bottom: 0.1875rem solid transparent;
+  border-radius: 0.0625rem;
+  padding: 0.9375rem 1.5rem 0.9375rem 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.nav ul li a:hover {
+  border-bottom: 0.1875rem solid var(--primary);
+}
+
+.nav ul li a:active {
+  color: var(--primary);
+  border-bottom: 0.1875rem solid var(--primary);
+}
+
+.nav [aria-current=page] {
+  color: var(--primary);
+  border-bottom: 0.1875rem solid var(--primary);
+}
+
+.nav-bars {
+  color: var(--gray);
+  background: var(--bg);
+  font-size: 1.25rem;
+  padding: 2.75rem 1.5rem 2.75rem 1.5rem;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-bars:hover {
+  color: var(--primary);
+  background: var(--bg);
+}
+
+.nav-bars:active {
+  color: var(--primary);
+  background: var(--bg);
+}
+
+.nav-dropdown {
+  display: none;
+  position: fixed;
+  color: var(--gray);
+  background: var(--bg);
+  top: 0;
+  left: 0;
+  height: 100vh;
+  border-radius: 0.0625rem;
+  overflow: auto;
+  box-shadow: 0 0.0625rem 0.0625rem 0.0625rem rgba(0,0,0,.1);
+  filter: alpha(opacity=95);
+  opacity: 0.95;
+  z-index: 12;
+}
+ /* dropdown nav's li's */
+.nav-dropdown ul {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-dropdown ul li {
+  list-style: none;
+}
+
+.nav-dropdown ul li a {
+  display: block;
+  color: var(--gray);
+  font-size: 1.5rem;
+  font-weight: 700;
+  min-width: 15rem;
+  padding: 1rem 1rem 1rem 1rem;
+  border-bottom: 0.0625rem solid var(--gray-lightest);
+  text-decoration: none;
+}
+
+.nav-dropdown ul li a:hover {
+  color: var(--primary);
+}
+
+.nav-dropdown ul li a:active {
+  color: var(--primary);
+}
+
+.nav-dropdown [aria-current=page] {
+  color: var(--primary);
+}
+/* end dropdown nav li's */
+
+.overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.7);
+  cursor: pointer;
+  z-index: 11;
+}
+
+/* Footer */
+
+.footer {
+  color: var(--gray-lightest);
+  background: var(--gray-darker);
+  flex-shrink: 0;
+}
+
+.footer a {
+  color: var(--bg);
+  text-decoration: underline;
+}
+
+.footer a:hover {
+  color: var(--gray-lightest);
+  text-decoration: none;
+}
+
+.footer a:active {
+  color: var(--bg);
+  text-decoration: none;
+}
+
+.ft-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding: 3.5rem 0rem 1.25rem 0rem;
+}
+
+.ft-main:after {
+  content: ""; /* This is necessary for the pseudo element to work. */ 
+  display: block; /* This will put the pseudo element on its own line. */
+  margin: 0rem auto; /* This will center the border. */
+  width: 80%; /* Change this to whatever width you want. */
+  padding-top: 2.5rem; /* This creates some space between the element and the border. */
+  border-bottom: 0.0625px solid var(--gray-lighter); /* This creates the border. Replace black with whatever color you want. */
+}
+
+.ft-main-item {
+  max-width: 90%;
+  padding: 1.25rem;
+}
+
+.ft-sign-up {
+  border: 0.125rem solid var(--gray-lighter);
+  border-radius: 0.3125rem;
+  padding: 2.5rem;
+  margin-bottom: 1.25rem;
+  text-align: center;
+}
+
+.ft-heading {
+  font-family: sans-serif;
+  font-size: 1.375rem;
+  color: var(--bg);
+  padding-bottom: 0.625rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#form-desc {
+  /* padding-bottom: 0.8125rem; */
+}
+
+input[type="email"] {
+  font-size: 1.0625rem;
+  color: var(--black);
+  text-align: center;
+  border: 0;
+  border-radius: 0.0625rem;
+  padding: 1rem 2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+input[type="email"]::placeholder {
+  font-size: 1.0625rem;
+  color: var(--form-placeholder);
+  text-align: center;
+  opacity: 1;
+}
+
+input[type="submit"] {
+  font-size: 1.25rem;
+  color: var(--gray-darker);
+  background: var(--primary-lighter);
+  cursor: pointer;
+  border: 0.125rem solid var(--primary-lighter);
+  border-radius: 0.0625rem;
+  padding: 0.75rem 2rem;
+}
+
+input[type="submit"]:hover {
+  color: var(--primary-lighter);
+  background: var(--gray-darker);
+  border: 0.125rem solid var(--primary-lighter);
+}
+
+input[type="submit"]:active {
+  color: var(--primary-lighter);
+  background: var(--gray-darker);
+  border: 0.125rem solid var(--primary-lighter);
+}
+
+.footer .contact-link {
+  font-size: 1.5rem;
+  padding: 0.625rem 1.25rem;
+  border: 0.125rem solid var(--gray-lighter);
+  text-decoration: none;
+}
+
+.ft-social {
+  padding: 0 1.875rem 1.25rem;
+}
+
+.ft-social-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*border-top: 0.0625rem solid var(--gray-lighter);*/
+  padding-top: 1.25rem;
+}
+
+.ft-social-list li {
+  font-size: 1.5rem;
+  margin: 0.5rem;
+}
+
+.ft-legal {
+    background-color: var(--bg-darker);
+    padding: 0rem 1.875rem 3rem 1.875rem;
+}
+
+.ft-legal-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.ft-legal-list li {
+    margin: 0.125rem 0.625rem;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.ft-legal-list li:first-child {
+  width: 100%;
+}
+
+/*.ft-legal-list li:nth-last-child(2) {
+    flex: 1;
+}*/
+
+/* Media Queries */
+
+@media (max-width: 45rem /*720px and smaller*/) {
+  body {
+    padding-top: 0rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .nav {
+    top: auto;
+    bottom: 0;
+    justify-content: space-between;
+  }
+
+  .nav-items {
+    flex-grow: 1;
+  }
+
+  #mobile-hidden {
+    display: none;
+  }
+
+  .ft-main {
+    justify-content: center;
+  }
+}
+
+@media (min-width: 45rem /*720px and larger*/) {
+  #mobile-only {
+    display: none;
+  }
+}
+
+@media (min-width: 77.5rem /*1240px and larger*/) {
+  .ft-main {
+    justify-content: center;
+  }
+}
